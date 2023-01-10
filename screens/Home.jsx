@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 import colors from "../colors";
+import { StatusBar } from "expo-status-bar";
 const catImageUrl =
   "https://cdn.imgbin.com/1/3/9/imgbin-hamburger-button-computer-icons-menu-navigation-menu-DcaJkNsQ036hGMXJW8ankHy7T.jpg";
 
@@ -20,14 +21,6 @@ const Home = () => {
         />
       ),
       headerRight: () => (
-        // <Image
-        //   source={{ uri: catImageUrl }}
-        //   style={{
-        //     width: 40,
-        //     height: 40,
-        //     marginRight: 15,
-        //   }}
-        // />
         <Entypo name="menu" size={24} color={colors.primary} />
       ),
     });
@@ -41,6 +34,7 @@ const Home = () => {
       >
         <Entypo name="chat" size={24} color={colors.lightGray} />
       </TouchableOpacity>
+      <StatusBar style="dark" />
     </View>
   );
 };
@@ -67,8 +61,9 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowOpacity: 0.9,
-    shadowRadius: 8,
-    marginRight: 20,
-    marginBottom: 50,
+    shadowRadius: 5,
+    position: "absolute",
+    bottom: 24,
+    right: 12,
   },
 });
